@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://i2s0r6qgs7wm"]
+[gd_scene load_steps=4 format=3 uid="uid://i2s0r6qgs7wm"]
 
 [ext_resource type="PackedScene" uid="uid://c6pism2kgjr5c" path="res://Scenes/Prefabs/UI/popup_menu.tscn" id="1_e7m6x"]
+[ext_resource type="Texture2D" uid="uid://kjshws3j4fgb" path="res://Sprites/w_longsword_cold.png" id="2_1xtal"]
+[ext_resource type="Script" path="res://Scripts/Sword.cs" id="3_yposs"]
 
 [node name="Level" type="Node2D"]
 
@@ -8,3 +10,9 @@
 
 [node name="PopupMenu" parent="CanvasLayer" instance=ExtResource("1_e7m6x")]
 visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(301, 177)
+scale = Vector2(4, 4)
+texture = ExtResource("2_1xtal")
+script = ExtResource("3_yposs")
