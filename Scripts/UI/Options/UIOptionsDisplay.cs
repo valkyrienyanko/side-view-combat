@@ -1,7 +1,7 @@
 using Newtonsoft.Json.Linq;
 using static Godot.DisplayServer;
 
-namespace Template;
+namespace SideViewCombat;
 
 public partial class UIOptionsDisplay : Control
 {

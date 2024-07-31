@@ -1,4 +1,4 @@
-namespace Template;
+namespace SideViewCombat;
 
 // About Scene Switching: https://docs.godotengine.org/en/latest/tutorials/scripting/singletons_autoload.html
 public partial class SceneManager : Node

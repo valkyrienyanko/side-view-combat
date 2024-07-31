@@ -1,4 +1,4 @@
-namespace Template;
+namespace SideViewCombat;
 
 [GlobalClass]
 public partial class GameState : Resource

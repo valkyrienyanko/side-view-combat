@@ -1,4 +1,4 @@
-﻿namespace Template;
+namespace SideViewCombat;
 
 [AttributeUsage(AttributeTargets.Method)]
 public class ConsoleCommandAttribute : Attribute

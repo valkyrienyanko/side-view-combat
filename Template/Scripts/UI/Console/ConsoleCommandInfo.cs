@@ -1,6 +1,6 @@
-﻿using System.Reflection;
+using System.Reflection;
 
-namespace Template;
+namespace SideViewCombat;
 
 public class ConsoleCommandInfo
 {

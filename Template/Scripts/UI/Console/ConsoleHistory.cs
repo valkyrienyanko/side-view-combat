@@ -1,4 +1,4 @@
-﻿namespace GodotUtils;
+namespace GodotUtils;
 
 public class ConsoleHistory
 {

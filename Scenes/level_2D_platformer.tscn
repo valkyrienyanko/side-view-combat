@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://i2s0r6qgs7wm"]
+
+[ext_resource type="PackedScene" uid="uid://c6pism2kgjr5c" path="res://Scenes/Prefabs/UI/popup_menu.tscn" id="1_e7m6x"]
+
+[node name="Level" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PopupMenu" parent="CanvasLayer" instance=ExtResource("1_e7m6x")]
+visible = false

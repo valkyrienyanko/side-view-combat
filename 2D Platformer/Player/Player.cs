@@ -1,4 +1,4 @@
-namespace Template.Platformer2D;
+namespace SideViewCombat.Platformer2D;
 
 public partial class Player : Entity
 {

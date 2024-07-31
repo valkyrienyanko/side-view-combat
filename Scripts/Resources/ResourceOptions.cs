@@ -1,4 +1,4 @@
-﻿namespace Template;
+namespace SideViewCombat;
 
 using VSyncMode = DisplayServer.VSyncMode;
 using QualityP = QualityPreset;

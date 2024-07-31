@@ -4,7 +4,7 @@ using System.Runtime.Loader;
 using System.Text.Json;
 using System.Xml.Linq;
 
-namespace Template;
+namespace SideViewCombat;
 
 public partial class ModLoader
 {

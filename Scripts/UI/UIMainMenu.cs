@@ -1,4 +1,4 @@
-namespace Template;
+namespace SideViewCombat;
 
 public partial class UIMainMenu : Node
 {
