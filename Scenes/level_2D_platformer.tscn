@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://i2s0r6qgs7wm"]
+[gd_scene load_steps=7 format=3 uid="uid://i2s0r6qgs7wm"]
 
 [ext_resource type="PackedScene" uid="uid://c6pism2kgjr5c" path="res://Scenes/Prefabs/UI/popup_menu.tscn" id="1_e7m6x"]
 [ext_resource type="Texture2D" uid="uid://kjshws3j4fgb" path="res://Sprites/w_longsword_cold.png" id="2_1xtal"]
-[ext_resource type="Script" path="res://Scripts/Sword.cs" id="3_yposs"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="3_yposs"]
 [ext_resource type="Texture2D" uid="uid://q80kt62wvbpp" path="res://Template/Sprites/UI/icon.svg" id="4_cqdi4"]
+[ext_resource type="Script" path="res://Scripts/Sword.cs" id="4_d5s7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_od4fq"]
 size = Vector2(150, 150)
@@ -22,9 +23,10 @@ script = ExtResource("3_yposs")
 position = Vector2(301, 177)
 scale = Vector2(4, 4)
 texture = ExtResource("2_1xtal")
-script = ExtResource("3_yposs")
+script = ExtResource("4_d5s7x")
 
 [node name="Hitbox" type="Area2D" parent="Player/Sword"]
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Sword/Hitbox"]
 position = Vector2(16, 2.25)

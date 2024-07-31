@@ -33,6 +33,11 @@ public partial class Player : Node
     {
         State state = new State(nameof(Idle));
 
+        state.Enter = () =>
+        {
+            SwitchState(Attack());
+        };
+
         return state;
     }
 
@@ -42,9 +47,14 @@ public partial class Player : Node
 
         state.Enter = () =>
         {
-            sword.Attack();
+            sword.Attack(EndOfAttackAnimationCallback);
         };
 
         return state;
+    }
+
+    void EndOfAttackAnimationCallback()
+    {
+        SwitchState(Idle());
     }
 }

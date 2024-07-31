@@ -2,18 +2,7 @@ namespace SideViewCombat;
 
 public partial class Sword : Sprite2D
 {
-    Area2D hitbox;
-
-    public override void _Ready()
-    {
-        hitbox = GetNode<Area2D>("Hitbox");
-        hitbox.BodyEntered += body =>
-        {
-            GD.Print("We hit something! Yeah!");
-        };
-    }
-
-    public void Attack()
+    public void Attack(Action endOfAnimationCallback)
     {
         GTween tween = new GTween(this);
 
@@ -32,7 +21,27 @@ public partial class Sword : Sprite2D
 
         tween.Callback(() =>
         {
-            // Create the hitbox
+            // Create the Area2D hitbox
+            Area2D area = new();
+            CollisionShape2D collisionShape = new();
+
+            RectangleShape2D shape = new();
+            shape.Size = Vector2.One * 100;
+            collisionShape.Shape = shape;
+
+            area.AddChild(collisionShape);
+            AddChild(area);
+
+            area.AreaEntered += area =>
+            {
+                GD.Print("Woo hoo");
+            };
+
+            GTween tween = new GTween(this);
+            tween.Delay(0.01);
+            tween.Callback(() => area.QueueFree());
+
+            endOfAnimationCallback();
         });
     }
 }
