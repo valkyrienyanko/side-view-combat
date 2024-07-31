@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://i2s0r6qgs7wm"]
+[gd_scene load_steps=6 format=3 uid="uid://i2s0r6qgs7wm"]
 
 [ext_resource type="PackedScene" uid="uid://c6pism2kgjr5c" path="res://Scenes/Prefabs/UI/popup_menu.tscn" id="1_e7m6x"]
 [ext_resource type="Texture2D" uid="uid://kjshws3j4fgb" path="res://Sprites/w_longsword_cold.png" id="2_1xtal"]
 [ext_resource type="Script" path="res://Scripts/Sword.cs" id="3_yposs"]
+[ext_resource type="Texture2D" uid="uid://q80kt62wvbpp" path="res://Template/Sprites/UI/icon.svg" id="4_cqdi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od4fq"]
+size = Vector2(150, 150)
 
 [node name="Level" type="Node2D"]
 
@@ -11,8 +15,25 @@
 [node name="PopupMenu" parent="CanvasLayer" instance=ExtResource("1_e7m6x")]
 visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("3_yposs")
+
+[node name="Sword" type="Sprite2D" parent="Player"]
 position = Vector2(301, 177)
 scale = Vector2(4, 4)
 texture = ExtResource("2_1xtal")
 script = ExtResource("3_yposs")
+
+[node name="Hitbox" type="Area2D" parent="Player/Sword"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Sword/Hitbox"]
+position = Vector2(16, 2.25)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_od4fq")
+
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2(419, 233)
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+modulate = Color(1, 0, 0.145098, 1)
+texture = ExtResource("4_cqdi4")
